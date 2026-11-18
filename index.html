@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Spot Barbershop · Montréal-Nord</title>
-<meta name="description" content="My Spot Barbershop à Montréal-Nord. Coupes, barbe, designs. Réservez en ligne sur Booksy.">
+<meta name="description" content="My Spot Barbershop, 5838 boul. Léger, Montréal-Nord. Coupes, barbe, designs. Réservez en ligne sur Booksy.">
 <style>
   :root { --noir:#0d0d0d; --or:#c9a24b; --blanc:#f5f5f5; --gris:#1c1c1c; }
   * { box-sizing:border-box; margin:0; padding:0; }
@@ -21,6 +21,11 @@
   .services b { color:var(--or); white-space:nowrap; }
   .infos { text-align:center; display:grid; gap:6px; }
   .infos a { color:var(--or); }
+  .galerie { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .galerie img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:8px; display:block; }
+  @media (max-width:600px) { .galerie { grid-template-columns:repeat(2,1fr); } }
+  .carte-map { width:100%; height:300px; border:0; border-radius:8px; margin-top:16px; }
+  .note { color:var(--or); font-weight:700; }
   footer { text-align:center; padding:32px 16px; opacity:.6; font-size:.9rem; }
   .fixe { position:fixed; bottom:16px; left:16px; right:16px; text-align:center; margin:0; display:none; }
   @media (max-width:600px) { .fixe { display:block; } body { padding-bottom:80px; } }
@@ -45,10 +50,24 @@
   </ul>
 </section>
 
+<section>
+  <h2>Nos <span>réalisations</span></h2>
+  <div class="galerie">
+    <img src="img/coupe-1.jpg" alt="Tresses et dégradé réalisés chez My Spot" loading="lazy">
+    <img src="img/coupe-2.jpg" alt="Tresses collées réalisées chez My Spot" loading="lazy">
+    <img src="img/coupe-3.jpg" alt="Twists et contour réalisés chez My Spot" loading="lazy">
+    <img src="img/coupe-4.jpg" alt="Coupe et barbe réalisées chez My Spot" loading="lazy">
+  </div>
+</section>
+
 <section class="infos">
   <h2>Nous <span>trouver</span></h2>
-  <p>Montréal-Nord, QC</p>
-  <p><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></p>
+  <p class="note">★ 4,6 sur Google (405 avis)</p>
+  <p>5838 boul. Léger, Montréal-Nord, QC H1G 1K6</p>
+  <p><a href="tel:+15143267775">(514) 326-7775</a></p>
+  <p>Dimanche au jeudi : 9 h à 21 h<br>Vendredi et samedi : 8 h 30 à 21 h</p>
+  <p><a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=100047534535503" target="_blank" rel="noopener">Facebook</a> · <a href="https://maps.app.goo.gl/vKizN4ZihQii4aD46" target="_blank" rel="noopener">Itinéraire</a></p>
+  <iframe class="carte-map" loading="lazy" title="Carte My Spot Barbershop" src="https://www.google.com/maps?q=MY+SPOT+Barbershop,+5838+Bd+L%C3%A9ger,+Montreal,+Quebec+H1G+1K6&output=embed"></iframe>
 </section>
 
 <footer>© My Spot Barbershop</footer>
