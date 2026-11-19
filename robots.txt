@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://myspotbarber.github.io/tienda-myspot/sitemap.xml

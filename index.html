@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Spot Barber Shop — Barbier à Montréal-Nord</title>
-<meta name="description" content="Barbier à Montréal-Nord — My Spot Barber Shop, 5838 boul. Léger. Coupes, dégradés, tresses, barbe et designs. Réservez en ligne sur Booksy.">
+<meta name="description" content="Barbier à Montréal-Nord — My Spot Barber Shop, 5838 boul. Léger. Coupes, dégradés, tresses, barbe et designs. Réserve en ligne sur Booksy.">
+<link rel="canonical" href="https://myspotbarber.github.io/tienda-myspot/">
 <meta property="og:title" content="My Spot Barber Shop — Barbier à Montréal-Nord">
-<meta property="og:description" content="Coupes, dégradés, tresses, barbe et designs au 5838 boul. Léger. Réservez en ligne sur Booksy.">
+<meta property="og:description" content="Barbier à Montréal-Nord — My Spot Barber Shop, 5838 boul. Léger. Coupes, dégradés, tresses, barbe et designs. Réserve en ligne sur Booksy.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://myspotbarber.github.io/tienda-myspot/">
 <meta property="og:image" content="https://myspotbarber.github.io/tienda-myspot/img/logo.png">
@@ -14,7 +15,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Barbershop",
+  "@type": "BarberShop",
   "name": "My Spot Barber Shop",
   "image": "https://myspotbarber.github.io/tienda-myspot/img/logo.png",
   "url": "https://myspotbarber.github.io/tienda-myspot/",
@@ -33,252 +34,51 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root { --noir:#151515; --noir2:#1d1d1d; --ligne:#2c2c2c; --or:#c9a566; --or2:#e0c08a; --blanc:#f6f3ee; --gris:#a9a49b; --creme:#f7f4ef; --encre:#1a1a1a; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  html { scroll-behavior:smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } * { transition:none !important; animation:none !important; } }
-  #accueil, #services, #apropos, #galerie, #avis, #contact { scroll-margin-top:95px; }
-  :root { --ease:cubic-bezier(.22,.61,.36,1); --vite:.25s; --lent:.7s; }
-  body { font-family:Inter,system-ui,-apple-system,sans-serif; background:var(--noir); color:var(--blanc); line-height:1.55; -webkit-font-smoothing:antialiased; }
-  body::before { content:""; position:fixed; inset:0; z-index:100; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  a { color:inherit; text-decoration:none; }
-  img { max-width:100%; display:block; }
-  .wrap { max-width:1140px; margin:0 auto; padding:0 20px; }
-  h1,h2,h3,.titre { font-family:Oswald,Impact,sans-serif; text-transform:uppercase; letter-spacing:.5px; line-height:1.05; }
-  .or { color:var(--or); }
-  .surtitre { color:var(--or); font-size:.8rem; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; }
-
-  /* Boutons */
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 26px; font-weight:700; font-size:.85rem; letter-spacing:1.2px; text-transform:uppercase; border-radius:4px; border:1.5px solid var(--or); transition:transform var(--vite) var(--ease), box-shadow var(--vite) var(--ease), background var(--vite) var(--ease), border-color var(--vite) var(--ease), color var(--vite) var(--ease); cursor:pointer; }
-  .btn:hover { transform:translateY(-2px); }
-  .btn:active { transform:translateY(0) scale(.98); transition-duration:.08s; }
-  .btn-or { background:var(--or); color:#151515; }
-  .btn-or:hover { background:var(--or2); border-color:var(--or2); box-shadow:0 10px 26px #c9a56633; }
-  .btn-ligne { border-color:#fff5; color:var(--blanc); }
-  .btn-ligne:hover { border-color:var(--or); color:var(--or); }
-  .btn-noir { background:var(--encre); color:#fff; border-color:var(--encre); }
-  .btn-noir:hover { background:#000; }
-
-  /* Barre du haut */
-  .topbar { background:#0d0d0d; font-size:.82rem; color:var(--gris); border-bottom:1px solid var(--ligne); }
-  .topbar .wrap { display:flex; justify-content:space-between; align-items:center; gap:16px; min-height:40px; flex-wrap:wrap; }
-  .topbar a:hover { color:var(--or); }
-  .topbar span, .topbar a { display:inline-flex; align-items:center; gap:8px; }
-  .topbar svg, .social svg { width:16px; height:16px; fill:none; stroke:var(--or); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-  .social { display:flex; gap:14px; }
-  .social svg { stroke:var(--blanc); }
-  .social a:hover svg { stroke:var(--or); }
-
-  /* Navigation */
-  header.nav { position:sticky; top:0; z-index:50; background:#151515f2; backdrop-filter:blur(8px); border-bottom:1px solid var(--ligne); }
-  .nav .wrap { display:flex; align-items:center; justify-content:space-between; gap:20px; height:76px; }
-  .marque { display:flex; align-items:center; gap:10px; }
-  .marque img { width:60px; height:60px; object-fit:contain; }
-  .marque b { font-family:Oswald,sans-serif; font-size:1.25rem; letter-spacing:1.5px; text-transform:uppercase; line-height:1; }
-  .marque small { display:block; font-family:Inter,sans-serif; font-size:.62rem; letter-spacing:3px; color:var(--or); font-weight:600; margin-top:4px; }
-  .menu { display:flex; gap:30px; font-size:.8rem; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; }
-  .menu a { position:relative; padding:6px 0; }
-  .menu a::after { content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--or); transform:scaleX(0); transform-origin:right; transition:transform .35s var(--ease); }
-  .menu a:hover { color:var(--or); }
-  .menu a:hover::after { transform:scaleX(1); transform-origin:left; }
-  .menu-mobile { display:none; }
-  .nav .btn { padding:12px 20px; }
-
-  /* Héro */
-  .hero { position:relative; overflow:hidden; background:radial-gradient(900px 500px at 85% 40%, #3a2f1c 0%, transparent 60%), linear-gradient(180deg,#151515,#101010); }
-  .hero .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; padding-top:64px; padding-bottom:64px; }
-  .hero h1 { font-size:clamp(2.6rem,6.2vw,4.6rem); font-weight:700; margin:14px 0 18px; }
-  .hero p.intro { color:#d9d4ca; font-size:1.05rem; max-width:460px; }
-  .actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
-  .note { display:flex; align-items:center; gap:12px; margin-top:28px; font-size:.92rem; color:#d9d4ca; }
-  .etoiles { color:var(--or); letter-spacing:3px; font-size:1.05rem; }
-  .hero-photo { position:relative; justify-self:center; width:min(100%,400px); }
-  .hero-photo img.photo { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; position:relative; z-index:1; box-shadow:0 30px 60px #000a; }
-  .hero-photo::before { content:""; position:absolute; inset:18px -18px -18px 18px; border:1.5px solid var(--or); border-radius:6px; }
-  .hero-photo .sceau { position:absolute; z-index:2; left:-34px; bottom:-30px; width:124px; height:124px; border-radius:50%; border:2px solid var(--or); box-shadow:0 10px 30px #000c; background:#151515; padding:14px; object-fit:contain; }
-
-  /* Atouts */
-  .atouts { background:#101010; border-top:1px solid var(--ligne); border-bottom:1px solid var(--ligne); }
-  .atouts .wrap { display:grid; grid-template-columns:repeat(4,1fr); }
-  .atout { display:flex; gap:14px; align-items:center; padding:26px 18px; border-left:1px solid var(--ligne); }
-  .atout svg { transition:transform .45s var(--ease); }
-  .atout:hover svg { transform:translateY(-3px); }
-  .atout:first-child { border-left:0; padding-left:0; }
-  .atout svg { flex:none; width:36px; height:36px; fill:none; stroke:var(--or); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
-  .atout b { display:block; color:var(--or); font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase; }
-  .atout span { font-size:.86rem; color:#cfcabf; }
-
-  /* Sections */
-  section { padding:76px 0; }
-  .tete { text-align:center; margin-bottom:40px; }
-  .tete h2 { font-size:clamp(1.9rem,4vw,2.6rem); margin-top:8px; }
-  .tete::after { content:""; display:block; width:48px; height:2px; background:var(--or); margin:14px auto 0; }
-  .clair { background:linear-gradient(180deg,#fbf9f5 0%,var(--creme) 120px); color:var(--encre); }
-
-  /* Services */
-  .services { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  .service { background:#fff; border:1px solid #e7e1d6; border-radius:6px; padding:26px 22px; display:flex; flex-direction:column; gap:8px; transition:.2s; }
-  .service { transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease); }
-  .service:hover { transform:translateY(-4px); box-shadow:0 4px 10px #00000012, 0 18px 36px #00000014; border-color:#c6b58f; }
-  .service:hover .ico svg { transform:rotate(-8deg); }
-  .service .ico svg { transition:transform .4s var(--ease); }
-  .service .ico { width:52px; height:52px; border-radius:50%; background:var(--encre); display:grid; place-items:center; margin-bottom:6px; }
-  .service .ico svg { width:24px; height:24px; fill:none; stroke:var(--or); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-  .service h3 { font-size:1.2rem; }
-  .service p { color:#6b665d; font-size:.92rem; flex:1; }
-  .service .prix { font-family:Oswald,sans-serif; font-size:1.6rem; font-weight:600; color:#a37f3d; }
-  .service.vedette { background:var(--encre); border-color:var(--or); }
-  .service.vedette h3 { color:var(--blanc); }
-  .service.vedette p { color:#b9b4a9; }
-  .service.vedette .prix { color:var(--or); }
-  .ajout { margin-top:18px; background:transparent; border:1.5px dashed #c6b58f; border-radius:6px; padding:14px 20px; text-align:center; color:#5d5748; font-size:.95rem; }
-  .ajout b { color:#8a6a30; }
-  .centre { text-align:center; margin-top:34px; }
-
-  /* À propos */
-  .apropos { background:radial-gradient(760px 420px at 18% 30%, #221b0f 0%, transparent 65%); }
-  .apropos .wrap { display:grid; grid-template-columns:1fr 1.1fr; gap:48px; align-items:center; }
-  .duo { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .duo img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; }
-  .duo img:last-child { margin-top:32px; }
-  .apropos h2 { font-size:clamp(1.9rem,4vw,2.6rem); margin:8px 0 16px; }
-  .apropos p { color:#d0cbc1; }
-  .chiffres { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:28px 0; }
-  .chiffres div { border-left:2px solid var(--or); padding-left:14px; }
-  .chiffres b { font-family:Oswald,sans-serif; font-size:1.9rem; display:block; line-height:1.1; }
-  .chiffres span { font-size:.8rem; color:var(--gris); text-transform:uppercase; letter-spacing:1px; }
-
-  /* Galerie */
-  .galerie { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-  .galerie a { position:relative; overflow:hidden; border-radius:6px; display:block; }
-  .galerie img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform var(--lent) var(--ease), filter var(--lent) var(--ease); }
-  .galerie a:hover img { transform:scale(1.05); filter:saturate(1.08); }
-  .galerie a::after { content:""; position:absolute; inset:0; border:1px solid #c9a56600; border-radius:6px; transition:border-color var(--lent) var(--ease); pointer-events:none; }
-  .galerie a:hover::after { border-color:#c9a56680; }
-
-  /* Avis */
-  .avis { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .avis figure { background:linear-gradient(180deg,#ffffff05,transparent 48px), var(--noir2); border:1px solid #ffffff14; border-radius:6px; padding:22px; display:flex; flex-direction:column; gap:12px; box-shadow:0 4px 24px #00000066; transition:border-color .4s var(--ease), transform .4s var(--ease); }
-  .avis figure:hover { border-color:#c9a56655; transform:translateY(-3px); }
-  .avis .et { color:var(--or); letter-spacing:3px; }
-  .avis .et i { color:#4a4a4a; font-style:normal; }
-  .avis blockquote { color:#d9d4ca; font-size:.94rem; flex:1; }
-  .avis figcaption { font-weight:700; font-size:.9rem; }
-  .avis figcaption span { display:block; font-weight:400; font-size:.76rem; color:var(--gris); }
-
-  /* Réserver */
-  .reserver { background:radial-gradient(640px 320px at 82% 50%, #2c2212 0%, transparent 70%), linear-gradient(90deg,#101010,#1c160b); border-top:1px solid #c9a56626; border-bottom:1px solid var(--ligne); padding:56px 0; }
-  .reserver .wrap { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
-  .reserver h2 { font-size:clamp(1.7rem,3.6vw,2.4rem); margin-top:6px; }
-
-  /* Contact */
-  .contact .wrap { display:grid; grid-template-columns:1fr 1.2fr; gap:40px; align-items:stretch; }
-  .infos { display:grid; gap:20px; align-content:start; }
-  .info { display:flex; gap:14px; }
-  .info svg { flex:none; width:22px; height:22px; margin-top:3px; fill:none; stroke:#a37f3d; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-  .info b { display:block; font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase; color:#8a6a30; }
-  .info a:hover { text-decoration:underline; }
-  .carte { width:100%; min-height:340px; height:100%; border:0; border-radius:6px; }
-
-  /* Pied */
-  footer { background:#0d0d0d; padding:48px 0 24px; font-size:.9rem; color:var(--gris); }
-  footer .wrap { display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:36px; }
-  footer img { width:110px; margin-bottom:10px; }
-  footer h4 { color:var(--blanc); font-size:.8rem; letter-spacing:1.8px; text-transform:uppercase; margin-bottom:12px; }
-  footer li { list-style:none; margin-bottom:7px; }
-  footer a:hover { color:var(--or); }
-  .copy { grid-column:1/-1; border-top:1px solid var(--ligne); padding-top:18px; text-align:center; font-size:.8rem; }
-
-  /* Bouton fixe mobile */
-  .fixe { display:none; }
-
-  @media (max-width:900px) {
-    .menu { display:none; }
-    .menu-mobile { display:block; position:relative; }
-    .menu-mobile summary { list-style:none; cursor:pointer; padding:10px; display:grid; place-items:center; border:1px solid var(--ligne); border-radius:4px; }
-    .menu-mobile summary::-webkit-details-marker { display:none; }
-    .menu-mobile svg { width:22px; height:22px; fill:none; stroke:var(--blanc); stroke-width:2; stroke-linecap:round; }
-    .menu-mobile[open] summary { border-color:var(--or); }
-    .menu-mobile[open] svg { stroke:var(--or); }
-    .menu-mobile nav { position:absolute; right:0; top:calc(100% + 10px); background:#101010; border:1px solid var(--ligne); border-radius:6px; min-width:220px; padding:8px; display:grid; box-shadow:0 18px 40px #000c; }
-    .menu-mobile nav a { padding:13px 16px; font-size:.85rem; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; border-radius:4px; }
-    .menu-mobile nav a:hover { background:var(--noir2); color:var(--or); }
-    .hero .wrap { grid-template-columns:1fr; padding-top:44px; padding-bottom:70px; }
-    .hero-photo { width:min(82%,340px); margin-top:8px; }
-    .hero-photo .sceau { width:96px; height:96px; left:-22px; bottom:-24px; }
-    .atouts .wrap { grid-template-columns:1fr 1fr; }
-    .atout { border-left:0; padding:18px 8px 18px 0; }
-    .services { grid-template-columns:1fr 1fr; }
-    .apropos .wrap, .contact .wrap { grid-template-columns:1fr; }
-    .galerie { grid-template-columns:1fr 1fr; }
-    .avis { grid-template-columns:1fr; }
-    footer .wrap { grid-template-columns:1fr 1fr; }
-    footer .wrap > div:first-child { grid-column:1/-1; }
-    section { padding:56px 0; }
-  }
-  @media (max-width:600px) {
-    .topbar .cache { display:none; }
-    .topbar .wrap { justify-content:center; }
-    .nav .wrap { height:66px; }
-    .marque img { width:50px; height:50px; }
-    .nav .btn { display:none; }
-    .services { grid-template-columns:1fr; }
-    .service { flex-direction:row; align-items:center; flex-wrap:wrap; padding:18px; }
-    .service .ico { margin:0; }
-    .service h3 { flex:1; }
-    .service p { flex-basis:100%; order:3; }
-    .chiffres b { font-size:1.5rem; }
-    .fixe { display:flex; position:fixed; left:14px; right:14px; bottom:14px; z-index:60; box-shadow:0 10px 30px #000c; }
-    body { padding-bottom:78px; }
-  }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <div class="topbar">
   <div class="wrap">
     <span class="cache"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>5838 boul. Léger, Montréal-Nord</span>
     <span>✂ Ouvert 7 jours sur 7</span>
-    <a class="cache" href="tel:+15143267775"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>(514) 326-7775</a>
+    <a class="cache" href="tel:+15143267775"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>(514) 326-7775</a>
     <div class="social cache">
       <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
       <a href="https://www.facebook.com/profile.php?id=100047534535503" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></a>
-      <a href="https://www.tiktok.com/@myspot.barbershop" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.500a3.5 3.5 0 1 1-3.5-3.500M14 3c.3 2.7 2 4.5 5 5"/></svg></a>
+      <a href="https://www.tiktok.com/@myspot.barbershop" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.3 2.7 2 4.5 5 5"/></svg></a>
     </div>
   </div>
 </div>
-
 <header class="nav">
   <div class="wrap">
-    <a class="marque" href="#accueil">
+    <a class="marque" href="index.html">
       <img src="img/logo.png" alt="Logo My Spot Barber Shop">
       <b>My Spot<small>BARBER SHOP</small></b>
     </a>
     <nav class="menu">
-      <a href="#accueil">Accueil</a>
-      <a href="#services">Services</a>
-      <a href="#apropos">À propos</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
+        <a href="index.html" class="actif">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="avis.html">Avis</a>
+        <a href="contact.html">Contact</a>
     </nav>
     <details class="menu-mobile">
       <summary aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
       <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#services">Services</a>
-        <a href="#apropos">À propos</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#avis">Avis</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" class="actif">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="avis.html">Avis</a>
+        <a href="contact.html">Contact</a>
+        <a href="reserver.html">Réserver</a>
       </nav>
     </details>
-    <a class="btn btn-or" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver</a>
+    <a class="btn btn-or" href="reserver.html">Réserver</a>
   </div>
 </header>
-
-<main id="accueil">
+<main>
 <div class="hero">
   <div class="wrap">
     <div>
@@ -286,8 +86,8 @@
       <h1>Plus qu'une coupe.<br>C'est <span class="or">ton spot.</span></h1>
       <p class="intro">Dégradés nets, tresses, barbe et designs, réalisés par des coiffeurs et coiffeuses passionnés.</p>
       <div class="actions">
-        <a class="btn btn-or" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy</a>
-        <a class="btn btn-ligne" href="#services">Voir les services</a>
+        <a class="btn btn-or" href="reserver.html">Réserver sur Booksy</a>
+        <a class="btn btn-ligne" href="services.html">Voir les services</a>
       </div>
       <div class="note"><span class="etoiles" role="img" aria-label="Note 4,6 sur 5">★★★★★</span><span><b>4,6</b> sur Google · 405 avis</span></div>
     </div>
@@ -300,35 +100,33 @@
 
 <div class="atouts">
   <div class="wrap">
-    <div class="atout"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.900M14.5 14.5 20 20M8.1 8.1 12 12"/></svg><div><b>Coiffeurs experts</b><span>Passion et précision</span></div></div>
+    <div class="atout"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg><div><b>Coiffeurs experts</b><span>Passion et précision</span></div></div>
     <div class="atout"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>Réservation facile</b><span>En ligne sur Booksy</span></div></div>
     <div class="atout"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Ouvert 7 jours</b><span>Jusqu'à 21 h</span></div></div>
-    <div class="atout"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.100L12 17l-5.4 2.9 1-6.100L3.2 9.500l6.1-.9z"/></svg><div><b>4,6 sur Google</b><span>405 avis clients</span></div></div>
+    <div class="atout"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><div><b>4,6 sur Google</b><span>405 avis clients</span></div></div>
   </div>
 </div>
 
-<section id="services" class="clair">
+<section class="clair">
   <div class="wrap">
     <div class="tete"><p class="surtitre" style="color:#8a6a30">Nos services</p><h2>Ce qu'on offre</h2></div>
     <div class="services">
-      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.900M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div><h3>Coupe homme</h3><p>Dégradé, taper ou classique, adapté à ton style.</p><span class="prix">40 $ et +</span></div>
-      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 9h.01M15 9h.01M10 11.500c1 .8 3 .8 4 0M5 21c1-4 4-5 7-5s6 1 7 5"/></svg></div><h3>Coupe enfant</h3><p>Des coupes stylées pour les plus jeunes.</p><span class="prix">30 $</span></div>
-      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 21c-2-4-3-8-1-12a6 6 0 0 1 12 0c2 4 1 8-1 12"/><circle cx="12" cy="10" r="3.5"/></svg></div><h3>Coupe femme</h3><p>Coupes et styles pour elle, avec soin.</p><span class="prix">45 $</span></div>
+      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div><h3>Coupe homme</h3><p>Dégradé, taper ou classique, adapté à ton style.</p><span class="prix">40 $ et +</span></div>
       <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 8c0 8 3 12 7 12s7-4 7-12c-2 2-4 2-7 2s-5 0-7-2z"/><path d="M9.5 14c1.5 1 3.5 1 5 0"/></svg></div><h3>Contour de barbe</h3><p>Lignes nettes et barbe bien dessinée.</p><span class="prix">30 $</span></div>
       <div class="service vedette"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6.5 5 10a5 5 0 0 1-10 0c0-3.5 2-6 5-10z"/></svg></div><h3>VIP</h3><p>Masque noir et vapeur pour un soin complet.</p><span class="prix">75 $</span></div>
     </div>
-    <p class="ajout"><b>Design + 5 $</b> — motifs et lignes personnalisés, ajoutés à n'importe quelle coupe.</p>
-    <div class="centre"><a class="btn btn-noir" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy</a></div>
+    <div class="centre"><a class="btn btn-noir" href="services.html">Tous les services et prix</a></div>
   </div>
 </section>
 
-<section id="apropos" class="apropos">
+<section class="apropos">
   <div class="wrap">
     <div class="duo">
       <img src="img/coupe-1.jpg" alt="Tresses et dégradé réalisés chez My Spot" loading="lazy">
       <img src="img/coupe-3.jpg" alt="Twists et contour réalisés chez My Spot" loading="lazy">
     </div>
     <div>
+      <p class="surtitre">À propos</p>
       <h2>Précision. Style. <span class="or">Confiance.</span></h2>
       <p>Chez My Spot, une coupe c'est plus qu'un service : c'est un moment pour toi. Nos coiffeurs et coiffeuses professionnels mettent leur passion dans chaque détail, au cœur de Montréal-Nord.</p>
       <div class="chiffres">
@@ -336,12 +134,12 @@
         <div><b>405</b><span>Avis clients</span></div>
         <div><b>7 / 7</b><span>Jours ouverts</span></div>
       </div>
-      <a class="btn btn-or" href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener">Nous suivre sur Instagram</a>
+      <a class="btn btn-or" href="a-propos.html">Découvrir le salon</a>
     </div>
   </div>
 </section>
 
-<section id="galerie" style="padding-top:0">
+<section style="padding-top:0">
   <div class="wrap">
     <div class="tete"><h2>Nos réalisations</h2></div>
     <div class="galerie">
@@ -350,47 +148,30 @@
       <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-1.jpg" alt="Tresses et dégradé" loading="lazy"></a>
       <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-3.jpg" alt="Twists et contour" loading="lazy"></a>
     </div>
+    <div class="centre"><a class="btn btn-ligne" href="galerie.html">Voir la galerie</a></div>
   </div>
 </section>
 
-<section id="avis" style="padding-top:0">
+<section style="padding-top:0">
   <div class="wrap">
     <div class="tete"><h2>Ce que disent nos clients</h2></div>
     <div class="avis">
       <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Toujours une belle ambiance à cette endroit et ils prennent bien soin de leur clients 💯💯 »</blockquote><figcaption>Rubens B.<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« La première fois que je me présentais au Barbershop. Je suis passé par le service en ligne pour faire une réservation. Une excellente idée car Fridou priorise ceux ou celles qui prennent un rendez-vous. Très accueillant et professionnel. Attentif à mes besoins. J'ai vraiment aimé. Merci My Spot Barbershop!! »</blockquote><figcaption>Marss C.<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Sérieux super ambiance de la bonne musique avec un accueil très amical et chaleureuse et coiffeur et coiffeuse très talentueux avec des prix plus que abordable quoi demander de plus »</blockquote><figcaption>Oliveoilsplash<span>Avis Google</span></figcaption></figure>
       <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Je recommande. Bon son, bonne ambiance. Le personnel est top ! Merci à Rudjerry pour la première coupe de cheveux de mon fils ! Je reviendrai »</blockquote><figcaption>Audrey L.<span>Avis Google</span></figcaption></figure>
       <figure><div class="et" role="img" aria-label="4 étoiles sur 5">★★★★<i aria-hidden="true">★</i></div><blockquote>« J'ai adoré cette barbershop ! L'ambiance est conviviale et les barbiers sont très professionnels. Le service est rapide et efficace, tout en restant de grande qualité. Un excellent rapport qualité-prix et une belle expérience ! »</blockquote><figcaption>Herve S.<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Ils ne m'ont jamais raté il y a de tois les goûts »</blockquote><figcaption>Matteo J.<span>Avis Google</span></figcaption></figure>
     </div>
-    <div class="centre"><a class="btn btn-ligne" href="https://maps.app.goo.gl/vKizN4ZihQii4aD46" target="_blank" rel="noopener">Voir tous les avis Google</a></div>
+    <div class="centre"><a class="btn btn-ligne" href="avis.html">Lire tous les avis</a></div>
   </div>
 </section>
 
 <div class="reserver">
   <div class="wrap">
     <div><p class="surtitre">Prêt pour un nouveau look ?</p><h2>Réserve ta place <span class="or">aujourd'hui</span></h2><p style="margin-top:10px;color:#d9d4ca">Choisis ton barbier directement sur Booksy au moment de réserver.</p></div>
-    <a class="btn btn-or" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy</a>
+    <a class="btn btn-or" href="reserver.html">Réserver sur Booksy</a>
   </div>
 </div>
 
-<section id="contact" class="clair contact">
-  <div class="wrap">
-    <div>
-      <h2 style="font-size:clamp(1.9rem,4vw,2.6rem);margin:8px 0 26px">Nous trouver</h2>
-      <div class="infos">
-        <div class="info"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Adresse</b><a href="https://maps.app.goo.gl/vKizN4ZihQii4aD46" target="_blank" rel="noopener">5838 boul. Léger<br>Montréal-Nord, QC H1G 1K6</a></div></div>
-        <div class="info"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><b>Téléphone</b><a href="tel:+15143267775">(514) 326-7775</a></div></div>
-        <div class="info"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Heures d'ouverture</b>Dimanche au jeudi : 9 h à 21 h<br>Vendredi et samedi : 8 h 30 à 21 h</div></div>
-        <div><a class="btn btn-noir" href="https://maps.app.goo.gl/vKizN4ZihQii4aD46" target="_blank" rel="noopener">Itinéraire</a></div>
-      </div>
-    </div>
-    <iframe class="carte" loading="lazy" title="Carte My Spot Barber Shop" src="https://www.google.com/maps?q=MY+SPOT+Barbershop,+5838+Bd+L%C3%A9ger,+Montreal,+Quebec+H1G+1K6&output=embed"></iframe>
-  </div>
-</section>
 </main>
-
 <footer>
   <div class="wrap">
     <div>
@@ -398,12 +179,14 @@
       <p>Barbier à Montréal-Nord.<br>Coupes nettes, service professionnel.</p>
     </div>
     <div>
-      <h4>Liens</h4>
+      <h4>Pages</h4>
       <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#galerie">Galerie</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="avis.html">Avis</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="reserver.html">Réserver</a></li>
       </ul>
     </div>
     <div>
@@ -419,9 +202,8 @@
   </div>
 </footer>
 
-<a class="btn btn-or fixe" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver maintenant</a>
+<a class="btn btn-or fixe" href="reserver.html">Réserver maintenant</a>
 <script>
-  // Al recargar, vuelve arriba (evita que el navegador restaure el scroll a mitad de página).
   if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
   if (!location.hash) { window.scrollTo(0, 0); window.addEventListener('pageshow', function(){ window.scrollTo(0, 0); }); }
 </script>
