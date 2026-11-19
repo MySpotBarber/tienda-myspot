@@ -111,6 +111,15 @@
   .galerie img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:.35s; }
   .galerie a:hover img { transform:scale(1.06); }
 
+  /* Avis */
+  .avis { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .avis figure { background:var(--noir2); border:1px solid var(--ligne); border-radius:6px; padding:22px; display:flex; flex-direction:column; gap:12px; }
+  .avis .et { color:var(--or); letter-spacing:3px; }
+  .avis .et i { color:#4a4a4a; font-style:normal; }
+  .avis blockquote { color:#d9d4ca; font-size:.94rem; flex:1; }
+  .avis figcaption { font-weight:700; font-size:.9rem; }
+  .avis figcaption span { display:block; font-weight:400; font-size:.76rem; color:var(--gris); }
+
   /* Réserver */
   .reserver { background:linear-gradient(90deg,#101010,#231c10); border-top:1px solid var(--ligne); border-bottom:1px solid var(--ligne); padding:56px 0; }
   .reserver .wrap { display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
@@ -147,6 +156,7 @@
     .services { grid-template-columns:1fr 1fr; }
     .apropos .wrap, .contact .wrap { grid-template-columns:1fr; }
     .galerie { grid-template-columns:1fr 1fr; }
+    .avis { grid-template-columns:1fr; }
     footer .wrap { grid-template-columns:1fr 1fr; }
     footer .wrap > div:first-child { grid-column:1/-1; }
     section { padding:56px 0; }
@@ -273,6 +283,21 @@
       <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-1.jpg" alt="Tresses et dégradé" loading="lazy"></a>
       <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-3.jpg" alt="Twists et contour" loading="lazy"></a>
     </div>
+  </div>
+</section>
+
+<section id="avis" style="padding-top:0">
+  <div class="wrap">
+    <div class="tete"><p class="surtitre">Ce que disent nos clients</p><h2>Clients satisfaits</h2></div>
+    <div class="avis">
+      <figure><div class="et">★★★★★<i></i></div><blockquote>« Toujours une belle ambiance à cette endroit et ils prennent bien soin de leur clients 💯💯 »</blockquote><figcaption>Rubens B.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et">★★★★★<i></i></div><blockquote>« La première fois que je me présentais au Barbershop. Je suis passé par le service en ligne pour faire une réservation. Une excellente idée car Fridou priorise ceux ou celles qui prennent un rendez-vous. Très accueillant et professionnel. Attentif à mes besoins. J'ai vraiment aimé. Merci My Spot Barbershop!! »</blockquote><figcaption>Marss C.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et">★★★★★<i></i></div><blockquote>« Sérieux super ambiance de la bonne musique avec un accueil très amical et chaleureuse et coiffeur et coiffeuse très talentueux avec des prix plus que abordable quoi demander de plus »</blockquote><figcaption>Oliveoilsplash<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et">★★★★★<i></i></div><blockquote>« Je recommande. Bon son, bonne ambiance. Le personnel est top ! Merci à Rudjerry pour la première coupe de cheveux de mon fils ! Je reviendrai »</blockquote><figcaption>Audrey L.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et">★★★★<i>★</i></div><blockquote>« J'ai adoré cette barbershop ! L'ambiance est conviviale et les barbiers sont très professionnels. Le service est rapide et efficace, tout en restant de grande qualité. Un excellent rapport qualité-prix et une belle expérience ! »</blockquote><figcaption>Herve S.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et">★★★★★<i></i></div><blockquote>« Ils ne m'ont jamais raté il y a de tois les goûts »</blockquote><figcaption>Matteo J.<span>Avis Google</span></figcaption></figure>
+    </div>
+    <div class="centre"><a class="btn btn-ligne" href="https://maps.app.goo.gl/vKizN4ZihQii4aD46" target="_blank" rel="noopener">Voir tous les avis Google</a></div>
   </div>
 </section>
 
