@@ -45,7 +45,7 @@
   header.nav { position:sticky; top:0; z-index:50; background:#151515f2; backdrop-filter:blur(8px); border-bottom:1px solid var(--ligne); }
   .nav .wrap { display:flex; align-items:center; justify-content:space-between; gap:20px; height:76px; }
   .marque { display:flex; align-items:center; gap:10px; }
-  .marque img { width:60px; height:60px; }
+  .marque img { width:60px; height:60px; object-fit:contain; }
   .marque b { font-family:Oswald,sans-serif; font-size:1.25rem; letter-spacing:1.5px; text-transform:uppercase; line-height:1; }
   .marque small { display:block; font-family:Inter,sans-serif; font-size:.62rem; letter-spacing:3px; color:var(--or); font-weight:600; margin-top:4px; }
   .menu { display:flex; gap:30px; font-size:.8rem; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; }
@@ -64,7 +64,7 @@
   .hero-photo { position:relative; justify-self:center; width:min(100%,400px); }
   .hero-photo img.photo { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; position:relative; z-index:1; box-shadow:0 30px 60px #000a; }
   .hero-photo::before { content:""; position:absolute; inset:18px -18px -18px 18px; border:1.5px solid var(--or); border-radius:6px; }
-  .hero-photo .sceau { position:absolute; z-index:2; left:-34px; bottom:-30px; width:124px; height:124px; border-radius:50%; border:2px solid var(--or); box-shadow:0 10px 30px #000c; }
+  .hero-photo .sceau { position:absolute; z-index:2; left:-34px; bottom:-30px; width:124px; height:124px; border-radius:50%; border:2px solid var(--or); box-shadow:0 10px 30px #000c; background:#151515; padding:14px; object-fit:contain; }
 
   /* Atouts */
   .atouts { background:#101010; border-top:1px solid var(--ligne); border-bottom:1px solid var(--ligne); }
