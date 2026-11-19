@@ -420,5 +420,10 @@
 </footer>
 
 <a class="btn btn-or fixe" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver maintenant</a>
+<script>
+  // Al recargar, vuelve arriba (evita que el navegador restaure el scroll a mitad de página).
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  if (!location.hash) { window.scrollTo(0, 0); window.addEventListener('pageshow', function(){ window.scrollTo(0, 0); }); }
+</script>
 </body>
 </html>
