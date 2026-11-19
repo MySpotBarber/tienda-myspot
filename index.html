@@ -3,8 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Spot Barber Shop · Montréal-Nord</title>
-<meta name="description" content="My Spot Barber Shop, 5838 boul. Léger, Montréal-Nord. Coupes, dégradés, tresses, barbe et designs. Réservez en ligne sur Booksy.">
+<title>My Spot Barber Shop — Barbier à Montréal-Nord</title>
+<meta name="description" content="Barbier à Montréal-Nord — My Spot Barber Shop, 5838 boul. Léger. Coupes, dégradés, tresses, barbe et designs. Réservez en ligne sur Booksy.">
+<meta property="og:title" content="My Spot Barber Shop — Barbier à Montréal-Nord">
+<meta property="og:description" content="Coupes, dégradés, tresses, barbe et designs au 5838 boul. Léger. Réservez en ligne sur Booksy.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://myspotbarber.github.io/tienda-myspot/">
+<meta property="og:image" content="https://myspotbarber.github.io/tienda-myspot/img/logo.png">
+<meta property="og:locale" content="fr_CA">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Barbershop",
+  "name": "My Spot Barber Shop",
+  "image": "https://myspotbarber.github.io/tienda-myspot/img/logo.png",
+  "url": "https://myspotbarber.github.io/tienda-myspot/",
+  "telephone": "+1-514-326-7775",
+  "address": {"@type":"PostalAddress","streetAddress":"5838 boul. Léger","addressLocality":"Montréal-Nord","addressRegion":"QC","postalCode":"H1G 1K6","addressCountry":"CA"},
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"21:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"08:30","closes":"21:00"}
+  ],
+  "sameAs": ["https://www.instagram.com/myspotbarbershop/","https://www.tiktok.com/@myspot.barbershop","https://www.facebook.com/profile.php?id=100047534535503"],
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"405"}
+}
+</script>
 <link rel="icon" href="img/icon.png">
 <link rel="apple-touch-icon" href="img/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +37,8 @@
   :root { --noir:#151515; --noir2:#1d1d1d; --ligne:#2c2c2c; --or:#c9a566; --or2:#e0c08a; --blanc:#f6f3ee; --gris:#a9a49b; --creme:#f7f4ef; --encre:#1a1a1a; }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } * { transition:none !important; } }
+  #accueil, #services, #apropos, #galerie, #avis, #contact { scroll-margin-top:95px; }
   body { font-family:Inter,system-ui,-apple-system,sans-serif; background:var(--noir); color:var(--blanc); line-height:1.55; -webkit-font-smoothing:antialiased; }
   a { color:inherit; text-decoration:none; }
   img { max-width:100%; display:block; }
@@ -51,6 +76,7 @@
   .menu { display:flex; gap:30px; font-size:.8rem; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; }
   .menu a { padding:6px 0; border-bottom:2px solid transparent; }
   .menu a:hover { color:var(--or); border-color:var(--or); }
+  .menu-mobile { display:none; }
   .nav .btn { padding:12px 20px; }
 
   /* Héro */
@@ -79,7 +105,7 @@
   section { padding:76px 0; }
   .tete { text-align:center; margin-bottom:40px; }
   .tete h2 { font-size:clamp(1.9rem,4vw,2.6rem); margin-top:8px; }
-  .tete::after { content:"✂"; display:block; color:var(--or); margin-top:10px; font-size:1.1rem; }
+  .tete::after { content:""; display:block; width:48px; height:2px; background:var(--or); margin:14px auto 0; }
   .clair { background:var(--creme); color:var(--encre); }
 
   /* Services */
@@ -91,6 +117,12 @@
   .service h3 { font-size:1.2rem; }
   .service p { color:#6b665d; font-size:.92rem; flex:1; }
   .service .prix { font-family:Oswald,sans-serif; font-size:1.6rem; font-weight:600; color:#a37f3d; }
+  .service.vedette { background:var(--encre); border-color:var(--or); }
+  .service.vedette h3 { color:var(--blanc); }
+  .service.vedette p { color:#b9b4a9; }
+  .service.vedette .prix { color:var(--or); }
+  .ajout { margin-top:18px; background:transparent; border:1.5px dashed #c6b58f; border-radius:6px; padding:14px 20px; text-align:center; color:#5d5748; font-size:.95rem; }
+  .ajout b { color:#8a6a30; }
   .centre { text-align:center; margin-top:34px; }
 
   /* À propos */
@@ -130,7 +162,7 @@
   .infos { display:grid; gap:20px; align-content:start; }
   .info { display:flex; gap:14px; }
   .info svg { flex:none; width:22px; height:22px; margin-top:3px; fill:none; stroke:#a37f3d; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-  .info b { display:block; font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase; color:#a37f3d; }
+  .info b { display:block; font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase; color:#8a6a30; }
   .info a:hover { text-decoration:underline; }
   .carte { width:100%; min-height:340px; height:100%; border:0; border-radius:6px; }
 
@@ -148,6 +180,15 @@
 
   @media (max-width:900px) {
     .menu { display:none; }
+    .menu-mobile { display:block; position:relative; }
+    .menu-mobile summary { list-style:none; cursor:pointer; padding:10px; display:grid; place-items:center; border:1px solid var(--ligne); border-radius:4px; }
+    .menu-mobile summary::-webkit-details-marker { display:none; }
+    .menu-mobile svg { width:22px; height:22px; fill:none; stroke:var(--blanc); stroke-width:2; stroke-linecap:round; }
+    .menu-mobile[open] summary { border-color:var(--or); }
+    .menu-mobile[open] svg { stroke:var(--or); }
+    .menu-mobile nav { position:absolute; right:0; top:calc(100% + 10px); background:#101010; border:1px solid var(--ligne); border-radius:6px; min-width:220px; padding:8px; display:grid; box-shadow:0 18px 40px #000c; }
+    .menu-mobile nav a { padding:13px 16px; font-size:.85rem; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; border-radius:4px; }
+    .menu-mobile nav a:hover { background:var(--noir2); color:var(--or); }
     .hero .wrap { grid-template-columns:1fr; padding-top:44px; padding-bottom:70px; }
     .hero-photo { width:min(82%,340px); margin-top:8px; }
     .hero-photo .sceau { width:96px; height:96px; left:-22px; bottom:-24px; }
@@ -206,7 +247,18 @@
       <a href="#galerie">Galerie</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-or" href="https://booksy.com/en-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver</a>
+    <details class="menu-mobile">
+      <summary aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </details>
+    <a class="btn btn-or" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver</a>
   </div>
 </header>
 
@@ -214,14 +266,14 @@
 <div class="hero">
   <div class="wrap">
     <div>
-      <p class="surtitre">Salon de coiffure · Montréal-Nord</p>
+      <p class="surtitre">Barbier · Montréal-Nord</p>
       <h1>Plus qu'une coupe.<br>C'est <span class="or">ton spot.</span></h1>
       <p class="intro">Dégradés nets, tresses, barbe et designs, réalisés par des coiffeurs et coiffeuses passionnés.</p>
       <div class="actions">
-        <a class="btn btn-or" href="https://booksy.com/en-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy</a>
+        <a class="btn btn-or" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy</a>
         <a class="btn btn-ligne" href="#services">Voir les services</a>
       </div>
-      <div class="note"><span class="etoiles">★★★★★</span><span><b>4,6</b> sur Google · 405 avis</span></div>
+      <div class="note"><span class="etoiles" role="img" aria-label="Note 4,6 sur 5">★★★★★</span><span><b>4,6</b> sur Google · 405 avis</span></div>
     </div>
     <div class="hero-photo">
       <img class="photo" src="img/coupe-4.jpg" alt="Coupe et barbe réalisées chez My Spot">
@@ -241,16 +293,16 @@
 
 <section id="services" class="clair">
   <div class="wrap">
-    <div class="tete"><p class="surtitre" style="color:#a37f3d">Nos services</p><h2>Ce qu'on offre</h2></div>
+    <div class="tete"><p class="surtitre" style="color:#8a6a30">Nos services</p><h2>Ce qu'on offre</h2></div>
     <div class="services">
-      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.900M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div><h3>Coupe homme</h3><p>Dégradé, taper ou classique, adapté à ton style.</p><span class="prix">40 $+</span></div>
+      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.900M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div><h3>Coupe homme</h3><p>Dégradé, taper ou classique, adapté à ton style.</p><span class="prix">40 $ et +</span></div>
       <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 9h.01M15 9h.01M10 11.500c1 .8 3 .8 4 0M5 21c1-4 4-5 7-5s6 1 7 5"/></svg></div><h3>Coupe enfant</h3><p>Des coupes stylées pour les plus jeunes.</p><span class="prix">30 $</span></div>
       <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><path d="M7 21c-2-4-3-8-1-12a6 6 0 0 1 12 0c2 4 1 8-1 12"/><circle cx="12" cy="10" r="3.5"/></svg></div><h3>Coupe femme</h3><p>Coupes et styles pour elle, avec soin.</p><span class="prix">45 $</span></div>
       <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 8c0 8 3 12 7 12s7-4 7-12c-2 2-4 2-7 2s-5 0-7-2z"/><path d="M9.5 14c1.5 1 3.5 1 5 0"/></svg></div><h3>Contour de barbe</h3><p>Lignes nettes et barbe bien dessinée.</p><span class="prix">30 $</span></div>
-      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.100L12 17l-5.4 2.9 1-6.100L3.2 9.500l6.1-.9z"/></svg></div><h3>Design</h3><p>Motifs et lignes personnalisés, ajoutés à ta coupe.</p><span class="prix">+5 $</span></div>
-      <div class="service"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6.5 5 10a5 5 0 0 1-10 0c0-3.5 2-6 5-10z"/></svg></div><h3>VIP</h3><p>Masque noir et vapeur pour un soin complet.</p><span class="prix">75 $</span></div>
+      <div class="service vedette"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 6.5 5 10a5 5 0 0 1-10 0c0-3.5 2-6 5-10z"/></svg></div><h3>VIP</h3><p>Masque noir et vapeur pour un soin complet.</p><span class="prix">75 $</span></div>
     </div>
-    <div class="centre"><a class="btn btn-noir" href="https://booksy.com/en-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver un service</a></div>
+    <p class="ajout"><b>Design + 5 $</b> — motifs et lignes personnalisés, ajoutés à n'importe quelle coupe.</p>
+    <div class="centre"><a class="btn btn-noir" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy</a></div>
   </div>
 </section>
 
@@ -261,7 +313,6 @@
       <img src="img/coupe-3.jpg" alt="Twists et contour réalisés chez My Spot" loading="lazy">
     </div>
     <div>
-      <p class="surtitre">À propos</p>
       <h2>Précision. Style. <span class="or">Confiance.</span></h2>
       <p>Chez My Spot, une coupe c'est plus qu'un service : c'est un moment pour toi. Nos coiffeurs et coiffeuses professionnels mettent leur passion dans chaque détail, au cœur de Montréal-Nord.</p>
       <div class="chiffres">
@@ -276,7 +327,7 @@
 
 <section id="galerie" style="padding-top:0">
   <div class="wrap">
-    <div class="tete"><p class="surtitre">Galerie</p><h2>Nos réalisations</h2></div>
+    <div class="tete"><h2>Nos réalisations</h2></div>
     <div class="galerie">
       <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-4.jpg" alt="Coupe et barbe" loading="lazy"></a>
       <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-2.jpg" alt="Tresses collées" loading="lazy"></a>
@@ -288,14 +339,14 @@
 
 <section id="avis" style="padding-top:0">
   <div class="wrap">
-    <div class="tete"><p class="surtitre">Ce que disent nos clients</p><h2>Clients satisfaits</h2></div>
+    <div class="tete"><h2>Ce que disent nos clients</h2></div>
     <div class="avis">
-      <figure><div class="et">★★★★★<i></i></div><blockquote>« Toujours une belle ambiance à cette endroit et ils prennent bien soin de leur clients 💯💯 »</blockquote><figcaption>Rubens B.<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et">★★★★★<i></i></div><blockquote>« La première fois que je me présentais au Barbershop. Je suis passé par le service en ligne pour faire une réservation. Une excellente idée car Fridou priorise ceux ou celles qui prennent un rendez-vous. Très accueillant et professionnel. Attentif à mes besoins. J'ai vraiment aimé. Merci My Spot Barbershop!! »</blockquote><figcaption>Marss C.<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et">★★★★★<i></i></div><blockquote>« Sérieux super ambiance de la bonne musique avec un accueil très amical et chaleureuse et coiffeur et coiffeuse très talentueux avec des prix plus que abordable quoi demander de plus »</blockquote><figcaption>Oliveoilsplash<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et">★★★★★<i></i></div><blockquote>« Je recommande. Bon son, bonne ambiance. Le personnel est top ! Merci à Rudjerry pour la première coupe de cheveux de mon fils ! Je reviendrai »</blockquote><figcaption>Audrey L.<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et">★★★★<i>★</i></div><blockquote>« J'ai adoré cette barbershop ! L'ambiance est conviviale et les barbiers sont très professionnels. Le service est rapide et efficace, tout en restant de grande qualité. Un excellent rapport qualité-prix et une belle expérience ! »</blockquote><figcaption>Herve S.<span>Avis Google</span></figcaption></figure>
-      <figure><div class="et">★★★★★<i></i></div><blockquote>« Ils ne m'ont jamais raté il y a de tois les goûts »</blockquote><figcaption>Matteo J.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Toujours une belle ambiance à cette endroit et ils prennent bien soin de leur clients 💯💯 »</blockquote><figcaption>Rubens B.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« La première fois que je me présentais au Barbershop. Je suis passé par le service en ligne pour faire une réservation. Une excellente idée car Fridou priorise ceux ou celles qui prennent un rendez-vous. Très accueillant et professionnel. Attentif à mes besoins. J'ai vraiment aimé. Merci My Spot Barbershop!! »</blockquote><figcaption>Marss C.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Sérieux super ambiance de la bonne musique avec un accueil très amical et chaleureuse et coiffeur et coiffeuse très talentueux avec des prix plus que abordable quoi demander de plus »</blockquote><figcaption>Oliveoilsplash<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Je recommande. Bon son, bonne ambiance. Le personnel est top ! Merci à Rudjerry pour la première coupe de cheveux de mon fils ! Je reviendrai »</blockquote><figcaption>Audrey L.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et" role="img" aria-label="4 étoiles sur 5">★★★★<i aria-hidden="true">★</i></div><blockquote>« J'ai adoré cette barbershop ! L'ambiance est conviviale et les barbiers sont très professionnels. Le service est rapide et efficace, tout en restant de grande qualité. Un excellent rapport qualité-prix et une belle expérience ! »</blockquote><figcaption>Herve S.<span>Avis Google</span></figcaption></figure>
+      <figure><div class="et" role="img" aria-label="5 étoiles sur 5">★★★★★<i aria-hidden="true"></i></div><blockquote>« Ils ne m'ont jamais raté il y a de tois les goûts »</blockquote><figcaption>Matteo J.<span>Avis Google</span></figcaption></figure>
     </div>
     <div class="centre"><a class="btn btn-ligne" href="https://maps.app.goo.gl/vKizN4ZihQii4aD46" target="_blank" rel="noopener">Voir tous les avis Google</a></div>
   </div>
@@ -303,15 +354,14 @@
 
 <div class="reserver">
   <div class="wrap">
-    <div><p class="surtitre">Prêt pour un nouveau look ?</p><h2>Réserve ta place <span class="or">aujourd'hui</span></h2></div>
-    <a class="btn btn-or" href="https://booksy.com/en-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy →</a>
+    <div><p class="surtitre">Prêt pour un nouveau look ?</p><h2>Réserve ta place <span class="or">aujourd'hui</span></h2><p style="margin-top:10px;color:#d9d4ca">Choisis ton barbier directement sur Booksy au moment de réserver.</p></div>
+    <a class="btn btn-or" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver sur Booksy</a>
   </div>
 </div>
 
 <section id="contact" class="clair contact">
   <div class="wrap">
     <div>
-      <p class="surtitre" style="color:#a37f3d">Contact</p>
       <h2 style="font-size:clamp(1.9rem,4vw,2.6rem);margin:8px 0 26px">Nous trouver</h2>
       <div class="infos">
         <div class="info"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Adresse</b><a href="https://maps.app.goo.gl/vKizN4ZihQii4aD46" target="_blank" rel="noopener">5838 boul. Léger<br>Montréal-Nord, QC H1G 1K6</a></div></div>
@@ -329,7 +379,7 @@
   <div class="wrap">
     <div>
       <img src="img/logo.png" alt="My Spot Barber Shop">
-      <p>Salon de coiffure à Montréal-Nord.<br>Coupes nettes, service professionnel.</p>
+      <p>Barbier à Montréal-Nord.<br>Coupes nettes, service professionnel.</p>
     </div>
     <div>
       <h4>Liens</h4>
@@ -353,6 +403,6 @@
   </div>
 </footer>
 
-<a class="btn btn-or fixe" href="https://booksy.com/en-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver maintenant</a>
+<a class="btn btn-or fixe" href="https://booksy.com/fr-ca/8653_edouard-barber-fresh-my-spot-barbershop_barbershop_1151161_montreal-nord" target="_blank" rel="noopener">Réserver maintenant</a>
 </body>
 </html>
