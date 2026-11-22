@@ -246,3 +246,9 @@
     a { color:#111; }
     .or, .surtitre, .prix { color:#8a6b2f; }
   }
+
+  .lightbox { position:fixed; inset:0; z-index:150; background:#000d; display:flex; align-items:center; justify-content:center; padding:24px; }
+  .lightbox[hidden] { display:none; }
+  .lightbox img { max-width:min(92vw,720px); max-height:88vh; width:auto; border-radius:8px; box-shadow:0 20px 60px #000; }
+  .lightbox button { position:absolute; top:14px; right:14px; width:44px; height:44px; border-radius:50%; border:1px solid var(--ligne); background:var(--noir2); color:var(--blanc); font-size:1.1rem; cursor:pointer; }
+  .lightbox button:hover { color:var(--or); border-color:var(--or); }

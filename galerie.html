@@ -76,17 +76,26 @@
   <div class="wrap">
     <p class="surtitre">Galerie</p>
     <h1>Nos <span class="or">réalisations</span></h1>
-    <p class="fil">Un aperçu du travail de l'équipe. Pour voir les coupes de la semaine, suis-nous sur Instagram et TikTok.</p>
+    <p class="fil">Dégradés, tapers, tresses, twists, designs et barbes : un aperçu du travail de l'équipe, directement de nos chaises. Clique sur une photo pour la voir en grand, et suis-nous sur Instagram et TikTok pour les coupes de la semaine.</p>
   </div>
 </div>
 
 <section>
   <div class="wrap">
     <div class="galerie">
-      <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-4.jpg" alt="Coupe et barbe" loading="lazy"></a>
-      <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-2.jpg" alt="Tresses collées" loading="lazy"></a>
-      <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-1.jpg" alt="Tresses et dégradé" loading="lazy"></a>
-      <a href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener"><img src="img/coupe-3.jpg" alt="Twists et contour" loading="lazy"></a>
+      <a class="agrandir" href="img/galerie/degrade-homme.jpg"><img src="img/galerie/degrade-homme.jpg" alt="Dégradé homme avec ligne nette réalisé chez My Spot" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/galerie/barbe-taper.jpg"><img src="img/galerie/barbe-taper.jpg" alt="Taper et contour de barbe sculpté" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/galerie/tresses-lineup.jpg"><img src="img/galerie/tresses-lineup.jpg" alt="Twists avec contour frais" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/galerie/design-enfant.jpg"><img src="img/galerie/design-enfant.jpg" alt="Coupe enfant avec design freestyle" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/coupe-4.jpg"><img src="img/coupe-4.jpg" alt="Coupe et barbe" loading="lazy"></a>
+      <a class="agrandir" href="img/galerie/tresses-taper-design.jpg"><img src="img/galerie/tresses-taper-design.jpg" alt="Tresses avec taper et design sur le côté" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/galerie/coupe-enfant-taper.jpg"><img src="img/galerie/coupe-enfant-taper.jpg" alt="Coupe enfant avec taper bas" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/galerie/box-braids.jpg"><img src="img/galerie/box-braids.jpg" alt="Box braids avec séparations nettes" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/coupe-2.jpg"><img src="img/coupe-2.jpg" alt="Tresses collées" loading="lazy"></a>
+      <a class="agrandir" href="img/galerie/coupe-jeune.jpg"><img src="img/galerie/coupe-jeune.jpg" alt="Coupe jeune avec contour précis" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/coupe-1.jpg"><img src="img/coupe-1.jpg" alt="Tresses et dégradé" loading="lazy"></a>
+      <a class="agrandir" href="img/galerie/tresses-atelier.jpg"><img src="img/galerie/tresses-atelier.jpg" alt="Tresses en cours de réalisation au salon" loading="lazy" width="720" height="900"></a>
+      <a class="agrandir" href="img/coupe-3.jpg"><img src="img/coupe-3.jpg" alt="Twists et contour" loading="lazy"></a>
     </div>
     <div class="centre" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
       <a class="btn btn-or" href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener">Instagram</a>
@@ -137,6 +146,22 @@
 <script>
   if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
   if (!location.hash) { window.scrollTo(0, 0); window.addEventListener('pageshow', function(){ window.scrollTo(0, 0); }); }
+</script>
+<script>
+(function(){
+  var links=document.querySelectorAll('a.agrandir');
+  if(!links.length)return;
+  var ov=document.createElement('div');ov.className='lightbox';ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Photo agrandie');ov.hidden=true;
+  ov.innerHTML='<img alt=""><button type="button" aria-label="Fermer">\u2715</button>';
+  document.body.appendChild(ov);
+  var img=ov.querySelector('img'),btn=ov.querySelector('button'),last=null;
+  function close(){ov.hidden=true;document.body.style.overflow='';if(last)last.focus();}
+  function open(a){img.src=a.getAttribute('href');img.alt=a.querySelector('img').alt;ov.hidden=false;document.body.style.overflow='hidden';last=a;btn.focus();}
+  links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open(a);});});
+  ov.addEventListener('click',function(e){if(e.target!==img)close();});
+  btn.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ov.hidden)close();});
+})();
 </script>
 </body>
 </html>
