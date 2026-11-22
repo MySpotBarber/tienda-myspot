@@ -123,5 +123,34 @@
   if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
   if (!location.hash) { window.scrollTo(0, 0); window.addEventListener('pageshow', function(){ window.scrollTo(0, 0); }); }
 </script>
+<script>
+(function(){
+  var btns=document.querySelectorAll('a[data-booksy]');
+  if(!btns.length)return;
+  var cur=null;
+  var st=document.createElement('style');st.textContent='.booksy-widget-button{display:none!important}';document.head.appendChild(st);
+  function clean(){
+    document.querySelectorAll('.booksy-widget-container').forEach(function(e){e.remove()});
+    document.querySelectorAll('.booksy-widget-dialog').forEach(function(e){var p=e.parentElement;(p&&p.tagName==='DIV'&&!p.className?p:e).remove()});
+    document.querySelectorAll('script[src*="booksy.com/widget"]').forEach(function(e){e.remove()});
+  }
+  btns.forEach(function(a){
+    a.addEventListener('click',function(ev){
+      ev.preventDefault();
+      var id=a.getAttribute('data-booksy');
+      if(cur===id){var b=document.querySelector('.booksy-widget-button');if(b){b.click();return;}}
+      clean();cur=id;
+      var sc=document.createElement('script');
+      sc.src='https://booksy.com/widget/code.js?id='+id+'&country=ca&lang=fr';
+      document.body.appendChild(sc);
+      var n=0,t=setInterval(function(){
+        var b=document.querySelector('.booksy-widget-button');
+        if(b){clearInterval(t);b.click();}
+        else if(++n>40){clearInterval(t);window.open(a.href,'_blank');}
+      },150);
+    });
+  });
+})();
+</script>
 </body>
 </html>
