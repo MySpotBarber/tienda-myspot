@@ -118,7 +118,7 @@
   /* Galerie */
   .galerie { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
   .galerie a { position:relative; overflow:hidden; border-radius:6px; display:block; }
-  .galerie img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform var(--lent) var(--ease), filter var(--lent) var(--ease); }
+  .galerie img { width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; transition:transform var(--lent) var(--ease), filter var(--lent) var(--ease); }
   .galerie a:hover img { transform:scale(1.05); filter:saturate(1.08); }
   .galerie a::after { content:""; position:absolute; inset:0; border:1px solid #c9a56600; border-radius:6px; transition:border-color var(--lent) var(--ease); pointer-events:none; }
   .galerie a:hover::after { border-color:#c9a56680; }
@@ -197,6 +197,9 @@
     .service .carte-titre { flex:1; }
     .service p { flex-basis:100%; order:3; }
     .chiffres b { font-size:1.5rem; }
+    .galerie { gap:8px; }
+    .galerie img { aspect-ratio:1/1; }
+    .galerie a { border-radius:4px; }
     .fixe { display:flex; position:fixed; left:14px; right:14px; bottom:14px; z-index:60; box-shadow:0 10px 30px #000c; }
     body:has(.fixe) { padding-bottom:78px; }
   }
