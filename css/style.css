@@ -87,7 +87,7 @@
   .service:hover { transform:translateY(-4px); box-shadow:0 4px 10px #00000012, 0 18px 36px #00000014; border-color:#c6b58f; }
   .service:hover .ico svg { transform:rotate(-8deg); }
   .service .ico svg { transition:transform .4s var(--ease); }
-  .service .photo-svc { width:calc(100% + 44px); margin:-26px -22px 12px; height:170px; object-fit:cover; border-radius:6px 6px 0 0; display:block; transition:filter .4s var(--ease); }
+  .service .photo-svc { width:calc(100% + 44px); max-width:none; margin:-26px -22px 12px; height:170px; object-fit:cover; border-radius:6px 6px 0 0; display:block; transition:filter .4s var(--ease); }
   .service:hover .photo-svc { filter:brightness(1.06); }
   .service .ico { width:52px; height:52px; border-radius:50%; background:var(--encre); display:grid; place-items:center; margin-bottom:6px; }
   .service .ico svg { width:24px; height:24px; fill:none; stroke:var(--or); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
@@ -191,6 +191,7 @@
     .nav .btn-or { display:none; }
     .services { grid-template-columns:1fr; }
     .service { flex-direction:row; align-items:center; flex-wrap:wrap; padding:18px; }
+    .service .photo-svc { width:calc(100% + 36px); max-width:none; flex:0 0 calc(100% + 36px); margin:-18px -18px 10px; order:-1; }
     .service .ico { margin:0; }
     .service h3 { flex:1; }
     .service p { flex-basis:100%; order:3; }
