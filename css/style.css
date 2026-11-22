@@ -56,7 +56,8 @@
   .hero p.intro { color:#d9d4ca; font-size:1.05rem; max-width:460px; }
   .actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:28px; }
   .note { display:flex; align-items:center; gap:12px; margin-top:28px; font-size:.92rem; color:#d9d4ca; }
-  .etoiles { color:var(--or); letter-spacing:3px; font-size:1.05rem; }
+  .etoiles { color:var(--or); display:inline-flex; align-items:center; }
+  .etoiles svg { height:21px; width:auto; display:block; }
   .hero-photo { position:relative; justify-self:center; width:min(100%,400px); }
   .hero-photo img.photo { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; position:relative; z-index:1; box-shadow:0 30px 60px #000a; }
   .hero-photo::before { content:""; position:absolute; inset:18px -18px -18px 18px; border:1.5px solid var(--or); border-radius:6px; }
@@ -236,8 +237,6 @@
   @media (max-width:900px){ .barbiers { grid-template-columns:1fr 1fr; } }
   @media (max-width:600px){ .barbiers { grid-template-columns:1fr; } }
 
-  .etoiles .et-fond { position:relative; color:#55504a; }
-  .etoiles .et-plein { position:absolute; left:0; top:0; width:92%; overflow:hidden; white-space:nowrap; color:var(--or); }
   .skip { position:absolute; left:-9999px; top:0; z-index:200; background:var(--or); color:var(--noir); padding:10px 18px; font-weight:600; }
   .skip:focus { left:0; }
   :focus-visible { outline:2px solid var(--or); outline-offset:3px; }
