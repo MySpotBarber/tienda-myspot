@@ -145,6 +145,7 @@
   .info { display:flex; gap:14px; }
   .info svg { flex:none; width:22px; height:22px; margin-top:3px; fill:none; stroke:#a37f3d; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
   .info b { display:block; font-size:.78rem; letter-spacing:1.5px; text-transform:uppercase; color:#8a6a30; }
+  .info a[href^="tel:"] { display:block; }
   .info a:hover { text-decoration:underline; }
   .carte { width:100%; min-height:340px; height:100%; border:0; border-radius:6px; }
 
