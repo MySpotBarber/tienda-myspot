@@ -122,6 +122,13 @@
   .filtres button:hover { border-color:var(--or); }
   .filtres button[aria-pressed="true"] { background:var(--or); border-color:var(--or); color:#151515; }
   .galerie figure[hidden] { display:none; }
+  .styles { max-width:860px; margin:0 auto 28px; border:1px solid #c9a56640; border-radius:8px; padding:20px 22px; background:#c9a5660d; }
+  .styles[hidden] { display:none; }
+  .styles h2 { font-size:1.15rem; letter-spacing:1px; text-transform:uppercase; margin:0 0 14px; text-align:center; }
+  .styles ol { list-style:none; counter-reset:st; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:8px 18px; }
+  .styles li { counter-increment:st; display:flex; align-items:center; gap:10px; font-size:.95rem; }
+  .styles li::before { content:counter(st); flex:none; width:26px; height:26px; border-radius:50%; background:var(--or); color:#151515; font:700 .8rem/26px Inter,sans-serif; text-align:center; }
+  .styles p { margin:14px 0 0; font-size:.85rem; color:var(--gris); text-align:center; }
   .service .voir-coupes { font-size:.82rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#8a6a30; margin-top:4px; }
   .service .voir-coupes:hover { text-decoration:underline; }
   .galerie { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; } .galerie figure { margin:0; }
