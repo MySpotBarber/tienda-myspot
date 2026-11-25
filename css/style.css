@@ -210,7 +210,7 @@
     .service { flex-direction:row; align-items:center; flex-wrap:wrap; padding:18px; }
     .service .photo-svc { width:calc(100% + 36px); max-width:none; flex:0 0 calc(100% + 36px); margin:-18px -18px 10px; order:-1; }
     .service .ico { margin:0; }
-    .service .voir-coupes { order:9; flex-basis:100%; }
+    .service .voir-coupes { order:9; flex-basis:100%; } .service .btn-svc { order:8; }
     .service .carte-titre { flex:1; }
     .service p { flex-basis:100%; order:3; }
     .chiffres b { font-size:1.5rem; }
@@ -250,6 +250,12 @@
   .barbier .bas { padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .barbier .carte-titre { font-size:1.02rem; letter-spacing:1px; }
   .barbier .bas .btn { padding:10px 16px; font-size:.76rem; }
+  .coiffeuses { margin-top:56px; text-align:center; scroll-margin-top:90px; }
+  .titre-coiffeuses { font-size:clamp(1.7rem,4vw,2.4rem); margin:8px 0 24px; }
+  .coiffeuses .barbiers { text-align:left; }
+  .barbier .role { margin:4px 0 0; font-size:.8rem; color:var(--gris); letter-spacing:.5px; }
+  .service .btn-svc { margin-top:6px; padding:10px 16px; font-size:.76rem; align-self:flex-start; }
+  .styles .styles-cta { margin-top:16px; }
   @media (max-width:900px){ .barbiers { grid-template-columns:1fr 1fr; } }
   @media (max-width:600px){ .barbiers { grid-template-columns:1fr; } }
 
