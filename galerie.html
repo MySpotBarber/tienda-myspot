@@ -76,34 +76,66 @@
   <div class="wrap">
     <p class="surtitre">Galerie</p>
     <h1>Nos <span class="or">réalisations</span></h1>
-    <p class="fil">Dégradés, tapers, tresses, twists, designs et barbes : un aperçu du travail de l'équipe, directement de nos chaises. Clique sur une photo pour la voir en grand, et suis-nous sur Instagram et TikTok pour les coupes de la semaine.</p>
+    <p class="fil">Dégradés, tapers, tresses, twists, designs et barbes : un aperçu du travail de l'équipe, directement de nos chaises. Choisis une catégorie, puis clique sur une photo pour la voir en grand, et suis-nous sur Instagram et TikTok pour les coupes de la semaine.</p>
   </div>
 </div>
 
 <section>
   <div class="wrap">
+    <div class="filtres" role="group" aria-label="Filtrer les coupes">
+      <button type="button" data-f="tout" aria-pressed="true">Tout</button>
+      <button type="button" data-f="homme" aria-pressed="false">Homme</button>
+      <button type="button" data-f="enfant" aria-pressed="false">Enfant</button>
+      <button type="button" data-f="tresses" aria-pressed="false">Tresses</button>
+      <button type="button" data-f="barbe" aria-pressed="false">Barbe</button>
+    </div>
+    <div class="styles" data-pour="homme" hidden>
+      <h2>Styles homme</h2>
+      <ol><li>Taper</li><li>Dégradé bas</li><li>Dégradé moyen</li><li>Dégradé haut</li><li>Burst fade</li><li>Mohawk + design</li><li>Ligne / raie</li><li>Coupe courte + dégradé</li><li>Boucles + dégradé</li><li>Twists + dégradé</li><li>Design (motif)</li></ol>
+      <p>Au moment de réserver, dis simplement le numéro du style à ton barbier.</p>
+    </div>
+    <div class="styles" data-pour="enfant" hidden>
+      <h2>Styles enfant</h2>
+      <ol><li>Coupe enfant classique</li><li>Taper enfant</li><li>Coupe + contour</li><li>Coupe + design</li><li>Tresses enfant</li><li>Twists enfant</li></ol>
+      <p>Au moment de réserver, dis simplement le numéro du style à ton barbier.</p>
+    </div>
+    <div class="styles" data-pour="tresses" hidden>
+      <h2>Styles tresses</h2>
+      <ol><li>Tresses collées (cornrows)</li><li>Tresses + design</li><li>Box braids</li><li>Twists</li><li>Locs + taper</li><li>Chignon + design</li><li>Tresses + dégradé</li></ol>
+      <p>Au moment de réserver, dis simplement le numéro du style à ton barbier.</p>
+    </div>
+    <div class="styles" data-pour="barbe" hidden>
+      <h2>Styles barbe</h2>
+      <ol><li>Contour net</li><li>Barbe dégradée</li><li>Barbe + taper</li></ol>
+      <p>Au moment de réserver, dis simplement le numéro du style à ton barbier.</p>
+    </div>
     <div class="galerie">
-      <figure><a class="agrandir" href="img/galerie/degrade-homme.jpg"><img src="img/galerie/degrade-homme.jpg" alt="Dégradé homme avec ligne nette" loading="lazy" width="720" height="900"></a><figcaption>Dégradé + ligne <span>EmileBarber</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/djerry-tresses-design.jpg"><img src="img/galerie/djerry-tresses-design.jpg" alt="Tresses avec design éclair sur le côté" loading="lazy" width="720" height="900"></a><figcaption>Tresses + design <span>DjerryCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/jojo-cornrows.jpg"><img src="img/galerie/jojo-cornrows.jpg" alt="Cornrows avec contour précis" loading="lazy" width="720" height="900"></a><figcaption>Cornrows + contour <span>JojoCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/rone-locs.jpg"><img src="img/galerie/rone-locs.jpg" alt="Locs avec taper et ligne nette" loading="lazy" width="720" height="900"></a><figcaption>Locs + taper <span>Rone Cutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/barbe-taper.jpg"><img src="img/galerie/barbe-taper.jpg" alt="Taper et contour de barbe sculpté" loading="lazy" width="720" height="900"></a><figcaption>Barbe + taper <span>My Spot</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/jojo-tresses-queue.jpg"><img src="img/galerie/jojo-tresses-queue.jpg" alt="Tresses attachées avec dégradé bas" loading="lazy" width="720" height="900"></a><figcaption>Tresses + dégradé <span>JojoCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/djerry-afro-blond.jpg"><img src="img/galerie/djerry-afro-blond.jpg" alt="Afro blond avec barbe pleine" loading="lazy" width="720" height="900"></a><figcaption>Afro blond + barbe <span>DjerryCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/tresses-lineup.jpg"><img src="img/galerie/tresses-lineup.jpg" alt="Twists avec contour frais" loading="lazy" width="720" height="900"></a><figcaption>Twists + contour <span>EmileBarber</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/rone-design-coeur.jpg"><img src="img/galerie/rone-design-coeur.jpg" alt="Design cœur sur dégradé" loading="lazy" width="720" height="900"></a><figcaption>Design cœur <span>Rone Cutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/design-enfant.jpg"><img src="img/galerie/design-enfant.jpg" alt="Coupe enfant avec design freestyle" loading="lazy" width="720" height="900"></a><figcaption>Coupe enfant + design <span>My Spot</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/jojo-tresses-degrade.jpg"><img src="img/galerie/jojo-tresses-degrade.jpg" alt="Tresses avec dégradé et ligne" loading="lazy" width="720" height="900"></a><figcaption>Tresses + dégradé <span>JojoCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/djerry-chignon-design.jpg"><img src="img/galerie/djerry-chignon-design.jpg" alt="Chignon avec design rasé" loading="lazy" width="720" height="900"></a><figcaption>Chignon + design <span>DjerryCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/coupe-enfant-taper.jpg"><img src="img/galerie/coupe-enfant-taper.jpg" alt="Coupe enfant avec taper bas" loading="lazy" width="720" height="900"></a><figcaption>Coupe enfant <span>EmileBarber</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/rone-boucles-chignon.jpg"><img src="img/galerie/rone-boucles-chignon.jpg" alt="Coupe bouclée avec dégradé" loading="lazy" width="720" height="900"></a><figcaption>Boucles + dégradé <span>Rone Cutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/tresses-taper-design.jpg"><img src="img/galerie/tresses-taper-design.jpg" alt="Tresses avec taper et design" loading="lazy" width="720" height="900"></a><figcaption>Tresses + design <span>My Spot</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/jojo-coupe-courte.jpg"><img src="img/galerie/jojo-coupe-courte.jpg" alt="Coupe courte avec dégradé net" loading="lazy" width="720" height="900"></a><figcaption>Coupe courte + dégradé <span>JojoCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/coupe-2.jpg"><img src="img/coupe-2.jpg" alt="Tresses collées" loading="lazy"></a><figcaption>Tresses collées <span>My Spot</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/djerry-dreads-barbe.jpg"><img src="img/galerie/djerry-dreads-barbe.jpg" alt="Dreads attachées et barbe sculptée" loading="lazy" width="720" height="900"></a><figcaption>Dreads + barbe <span>DjerryCutz</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/box-braids.jpg"><img src="img/galerie/box-braids.jpg" alt="Box braids avec séparations nettes" loading="lazy" width="720" height="900"></a><figcaption>Box braids <span>My Spot</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/twists-degrade.jpg"><img src="img/galerie/twists-degrade.jpg" alt="Twists avec dégradé et design" loading="lazy" width="720" height="900"></a><figcaption>Twists + dégradé <span>My Spot</span></figcaption></figure>
-      <figure><a class="agrandir" href="img/galerie/tresses-atelier.jpg"><img src="img/galerie/tresses-atelier.jpg" alt="Tresses en cours de réalisation au salon" loading="lazy" width="720" height="900"></a><figcaption>Tresses au salon <span>JojoCutz</span></figcaption></figure>
+      <figure data-cat="enfant"><a class="agrandir" href="img/galerie/coupe-enfant-patron.jpg"><img src="img/galerie/coupe-enfant-patron.jpg" alt="Coupe enfant avec contour, réalisée par le patron" loading="lazy" width="720" height="900"></a><figcaption>Coupe enfant + contour <span>Le patron</span></figcaption></figure>
+      <figure data-cat="enfant tresses"><a class="agrandir" href="img/galerie/tresses-enfant-profil.jpg"><img src="img/galerie/tresses-enfant-profil.jpg" alt="Tresses collées sur un enfant, vue de profil" loading="lazy" width="720" height="900"></a><figcaption>Tresses enfant <span>My Spot</span></figcaption></figure>
+      <figure data-cat="enfant tresses"><a class="agrandir" href="img/galerie/twists-enfant.jpg"><img src="img/galerie/twists-enfant.jpg" alt="Twists sur un enfant avec séparations nettes" loading="lazy" width="720" height="900"></a><figcaption>Twists enfant <span>My Spot</span></figcaption></figure>
+      <figure data-cat="enfant"><a class="agrandir" href="img/galerie/taper-ado.jpg"><img src="img/galerie/taper-ado.jpg" alt="Taper ado avec contour net et cheveux longs" loading="lazy" width="720" height="900"></a><figcaption>Taper ado <span>My Spot</span></figcaption></figure>
+      <figure data-cat="enfant tresses"><a class="agrandir" href="img/galerie/tresses-enfant-dos.jpg"><img src="img/galerie/tresses-enfant-dos.jpg" alt="Tresses collées enfant, vue de dos" loading="lazy" width="720" height="900"></a><figcaption>Tresses enfant (dos) <span>My Spot</span></figcaption></figure>
+      <figure data-cat="homme"><a class="agrandir" href="img/galerie/degrade-homme.jpg"><img src="img/galerie/degrade-homme.jpg" alt="Dégradé homme avec ligne nette" loading="lazy" width="720" height="900"></a><figcaption>Dégradé + ligne <span>EmileBarber</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/djerry-tresses-design.jpg"><img src="img/galerie/djerry-tresses-design.jpg" alt="Tresses avec design éclair sur le côté" loading="lazy" width="720" height="900"></a><figcaption>Tresses + design <span>DjerryCutz</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/jojo-cornrows.jpg"><img src="img/galerie/jojo-cornrows.jpg" alt="Cornrows avec contour précis" loading="lazy" width="720" height="900"></a><figcaption>Cornrows + contour <span>JojoCutz</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/rone-locs.jpg"><img src="img/galerie/rone-locs.jpg" alt="Locs avec taper et ligne nette" loading="lazy" width="720" height="900"></a><figcaption>Locs + taper <span>Rone Cutz</span></figcaption></figure>
+      <figure data-cat="homme barbe"><a class="agrandir" href="img/galerie/barbe-taper.jpg"><img src="img/galerie/barbe-taper.jpg" alt="Taper et contour de barbe sculpté" loading="lazy" width="720" height="900"></a><figcaption>Barbe + taper <span>My Spot</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/jojo-tresses-queue.jpg"><img src="img/galerie/jojo-tresses-queue.jpg" alt="Tresses attachées avec dégradé bas" loading="lazy" width="720" height="900"></a><figcaption>Tresses + dégradé <span>JojoCutz</span></figcaption></figure>
+      <figure data-cat="homme barbe"><a class="agrandir" href="img/galerie/djerry-afro-blond.jpg"><img src="img/galerie/djerry-afro-blond.jpg" alt="Afro blond avec barbe pleine" loading="lazy" width="720" height="900"></a><figcaption>Afro blond + barbe <span>DjerryCutz</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/tresses-lineup.jpg"><img src="img/galerie/tresses-lineup.jpg" alt="Twists avec contour frais" loading="lazy" width="720" height="900"></a><figcaption>Twists + contour <span>EmileBarber</span></figcaption></figure>
+      <figure data-cat="homme"><a class="agrandir" href="img/galerie/rone-design-coeur.jpg"><img src="img/galerie/rone-design-coeur.jpg" alt="Design cœur sur dégradé" loading="lazy" width="720" height="900"></a><figcaption>Design cœur <span>Rone Cutz</span></figcaption></figure>
+      <figure data-cat="enfant"><a class="agrandir" href="img/galerie/design-enfant.jpg"><img src="img/galerie/design-enfant.jpg" alt="Coupe enfant avec design freestyle" loading="lazy" width="720" height="900"></a><figcaption>Coupe enfant + design <span>My Spot</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/jojo-tresses-degrade.jpg"><img src="img/galerie/jojo-tresses-degrade.jpg" alt="Tresses avec dégradé et ligne" loading="lazy" width="720" height="900"></a><figcaption>Tresses + dégradé <span>JojoCutz</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/djerry-chignon-design.jpg"><img src="img/galerie/djerry-chignon-design.jpg" alt="Chignon avec design rasé" loading="lazy" width="720" height="900"></a><figcaption>Chignon + design <span>DjerryCutz</span></figcaption></figure>
+      <figure data-cat="enfant"><a class="agrandir" href="img/galerie/coupe-enfant-taper.jpg"><img src="img/galerie/coupe-enfant-taper.jpg" alt="Coupe enfant avec taper bas" loading="lazy" width="720" height="900"></a><figcaption>Coupe enfant <span>EmileBarber</span></figcaption></figure>
+      <figure data-cat="homme"><a class="agrandir" href="img/galerie/rone-boucles-chignon.jpg"><img src="img/galerie/rone-boucles-chignon.jpg" alt="Coupe bouclée avec dégradé" loading="lazy" width="720" height="900"></a><figcaption>Boucles + dégradé <span>Rone Cutz</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/tresses-taper-design.jpg"><img src="img/galerie/tresses-taper-design.jpg" alt="Tresses avec taper et design" loading="lazy" width="720" height="900"></a><figcaption>Tresses + design <span>My Spot</span></figcaption></figure>
+      <figure data-cat="homme"><a class="agrandir" href="img/galerie/jojo-coupe-courte.jpg"><img src="img/galerie/jojo-coupe-courte.jpg" alt="Coupe courte avec dégradé net" loading="lazy" width="720" height="900"></a><figcaption>Coupe courte + dégradé <span>JojoCutz</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/coupe-2.jpg"><img src="img/coupe-2.jpg" alt="Tresses collées" loading="lazy"></a><figcaption>Tresses collées <span>My Spot</span></figcaption></figure>
+      <figure data-cat="tresses barbe"><a class="agrandir" href="img/galerie/djerry-dreads-barbe.jpg"><img src="img/galerie/djerry-dreads-barbe.jpg" alt="Dreads attachées et barbe sculptée" loading="lazy" width="720" height="900"></a><figcaption>Dreads + barbe <span>DjerryCutz</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/box-braids.jpg"><img src="img/galerie/box-braids.jpg" alt="Box braids avec séparations nettes" loading="lazy" width="720" height="900"></a><figcaption>Box braids <span>My Spot</span></figcaption></figure>
+      <figure data-cat="homme tresses"><a class="agrandir" href="img/galerie/twists-degrade.jpg"><img src="img/galerie/twists-degrade.jpg" alt="Twists avec dégradé et design" loading="lazy" width="720" height="900"></a><figcaption>Twists + dégradé <span>My Spot</span></figcaption></figure>
+      <figure data-cat="tresses"><a class="agrandir" href="img/galerie/tresses-atelier.jpg"><img src="img/galerie/tresses-atelier.jpg" alt="Tresses en cours de réalisation au salon" loading="lazy" width="720" height="900"></a><figcaption>Tresses au salon <span>JojoCutz</span></figcaption></figure>
     </div>
     <div class="centre" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
       <a class="btn btn-or" href="https://www.instagram.com/myspotbarbershop/" target="_blank" rel="noopener">Instagram</a>
@@ -170,6 +202,21 @@
   ov.addEventListener('click',function(e){if(e.target!==img)close();});
   btn.addEventListener('click',close);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ov.hidden)close();});
+})();
+</script>
+<script>
+(function(){
+  var bs=document.querySelectorAll('.filtres button'),figs=document.querySelectorAll('.galerie figure');
+  function go(f,push){
+    if(!document.querySelector('.filtres [data-f="'+f+'"]'))f='tout';
+    bs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===f?'true':'false');});
+    figs.forEach(function(x){x.hidden=!(f==='tout'||(' '+x.dataset.cat+' ').indexOf(' '+f+' ')>-1);});
+    document.querySelectorAll('.styles').forEach(function(d){d.hidden=d.dataset.pour!==f;});
+    if(push)history.replaceState(null,'',f==='tout'?location.pathname:'#'+f);
+  }
+  bs.forEach(function(b){b.addEventListener('click',function(){go(b.dataset.f,true);});});
+  var h=location.hash.slice(1);
+  if(h){go(h,false);var el=document.querySelector('.filtres');if(el)setTimeout(function(){el.scrollIntoView({block:'start'});},0);}
 })();
 </script>
 </body>
