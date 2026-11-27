@@ -253,6 +253,10 @@
   .coiffeuses { margin-top:56px; text-align:center; scroll-margin-top:90px; }
   .titre-coiffeuses { font-size:clamp(1.7rem,4vw,2.4rem); margin:8px 0 24px; }
   .coiffeuses .barbiers { text-align:left; }
+  .barbier.bientot { border:1.5px dashed #c9a56666; background:transparent; align-items:center; justify-content:center; min-height:260px; }
+  .barbier.bientot:hover { transform:none; box-shadow:none; }
+  .bientot-in { text-align:center; padding:24px; }
+  .bientot-ico { display:inline-flex; width:48px; height:48px; border-radius:50%; border:1.5px solid var(--or); color:var(--or); font:400 1.8rem/44px Inter,sans-serif; justify-content:center; margin-bottom:12px; }
   .barbier .role { margin:4px 0 0; font-size:.8rem; color:var(--gris); letter-spacing:.5px; }
   .service .btn-svc { margin-top:6px; padding:10px 16px; font-size:.76rem; align-self:flex-start; }
   .styles .styles-cta { margin-top:16px; }
